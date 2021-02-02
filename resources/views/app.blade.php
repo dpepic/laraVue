@@ -9,14 +9,13 @@
 <body>
     <div id="app">
         <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/">Go to Home</router-link>
+        <router-link to="/sve">Sve osobe</router-link>
         @{{ message }}
         <button v-on:click="reverseMessage">Reverse Message</button>
         <input v-model="message">
-    </div>
-    <div id="bla">
-        @{{ blabla }}
-        <Komponenta></Komponenta>
-        <Teest v-bind:todo="poruka"></Teest>
+        <p><b>Ovo je view:</b></p>
+        <router-view></router-view>
     </div>
     <script src={{ mix('js/app.js') }} type="text/javascript"></script>
 </body>

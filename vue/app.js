@@ -1,19 +1,17 @@
 import Vue from 'vue';
 
 import VueRouter from 'vue-router';
+import VueAxios from 'vue-axios';
+import axios from 'axios';
 import {routes} from './rute.js';
 
 import Komponenta from './Komponenta.vue';
 
 Vue.use(VueRouter);
+Vue.use(VueAxios, axios);
 
 const ruter = new VueRouter({mode:'history', routes: routes});
 
-Vue.component('Teest',
-{
-    props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
-})
 
 let test = new Vue(
 {
