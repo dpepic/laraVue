@@ -18,16 +18,6 @@ class OsobaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -35,7 +25,8 @@ class OsobaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $osoba = new Osoba(['Ime' => $request->input('Ime'), 'Prezime' => $request->input('Prezime') ]);
+        $osoba->save();
     }
 
     /**
@@ -49,17 +40,10 @@ class OsobaController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Osoba  $osoba
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Osoba $osoba)
     {
-        //
+        return response()->json($osoba);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -69,7 +53,7 @@ class OsobaController extends Controller
      */
     public function update(Request $request, Osoba $osoba)
     {
-        //
+        $osoba->update($request->all());
     }
 
     /**
@@ -78,8 +62,8 @@ class OsobaController extends Controller
      * @param  \App\Models\Osoba  $osoba
      * @return \Illuminate\Http\Response
      */
-    public function destroy($osoba)
+    public function destroy(Osoba $osoba)
     {
-        Osoba::find($osoba)->delete();
+        $osoba->delete();
     }
 }

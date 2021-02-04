@@ -11,6 +11,7 @@
         <router-link to="/foo">Go to Foo</router-link>
         <router-link to="/">Go to Home</router-link>
         <router-link to="/sve">Sve osobe</router-link>
+        <router-link to="/dodaj">Dodaju osobu</router-link>
         @{{ message }}
         <button v-on:click="reverseMessage">Reverse Message</button>
         <input v-model="message">

@@ -3,6 +3,7 @@
         <ul>
             <li v-for="osoba in osobas" :key="osoba.id">
                 {{osoba.id}} -- {{osoba.Ime}} -- {{osoba.Prezime}} -- <button class="btn btn-danger" @click="obrisi(osoba.id)">Brisanje</button>
+                <router-link :to="{name: 'edit', params: {id: osoba.id}}">Edit</router-link>
             </li>
         </ul>
     </div>
